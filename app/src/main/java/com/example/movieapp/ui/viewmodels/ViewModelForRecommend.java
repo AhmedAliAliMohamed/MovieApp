@@ -21,12 +21,10 @@ public class ViewModelForRecommend extends ViewModel {
             @Override
             public void onResponse(Call<ModelForRecommendation> call, Response<ModelForRecommendation> response) {
                 movieRecommendation.setValue(response.body());
-                Log.i("AHmed","EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"+movieRecommendation);
             }
 
             @Override
             public void onFailure(Call<ModelForRecommendation> call, Throwable t) {
-                Log.i("ahmed","RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"+t.getMessage());
 
             }
         });
