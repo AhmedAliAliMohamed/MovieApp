@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_280sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="30"
+            android:background="@color/Darkgray">
+            <ImageView
+                android:id="@+id/image_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"/>
+
+            <TextView
+                android:id="@+id/text_title_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15ssp"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingLeft="@dimen/_5sdp"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="3">
+                <RatingBar
+                    android:id="@+id/rate_view_recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_weight="2"
+                    android:numStars="8"
+                    android:theme="@style/RatingBar"
+                    android:rating="0.1"/>
+                <TextView
+                    android:id="@+id/text_avrage_rate_recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_11ssp"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/text_date_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
