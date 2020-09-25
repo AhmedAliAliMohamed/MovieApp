@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -13,7 +14,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
+import com.example.movieapp.adapters.AdapterForActors;
 import com.example.movieapp.adapters.AdapterForRecommendations;
+import com.example.movieapp.models.ModelForActors;
 import com.example.movieapp.models.ModelForDetailMovie;
 import com.example.movieapp.models.ModelForRecommendation;
 import com.example.movieapp.ui.viewmodels.ViewModelForDetails;
@@ -35,7 +38,11 @@ public class DetailsOfMovie extends AppCompatActivity {
 
    private RecyclerView recyclerRecommendation;
    private AdapterForRecommendations adapterForRecommendations;
-   List<ModelForRecommendation.ResultsBean> listForRecommendations = new ArrayList<>();
+   private List<ModelForRecommendation.ResultsBean> listForRecommendations = new ArrayList<>();
+
+   private RecyclerView recyclerViewActors;
+   private AdapterForActors adapterForActors;
+
 
 
     @Override
@@ -48,6 +55,11 @@ public class DetailsOfMovie extends AppCompatActivity {
         adapterForRecommendations = new AdapterForRecommendations(this,listForRecommendations);
         recyclerRecommendation.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerRecommendation.setAdapter(adapterForRecommendations);
+
+        recyclerViewActors =findViewById(R.id.recycler_actors);
+        recyclerViewActors.setLayoutManager(new LinearLayoutManager(this));
+        adapterForActors = new AdapterForActors(this);
+        recyclerViewActors.setAdapter(adapterForActors);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -79,6 +91,13 @@ public class DetailsOfMovie extends AppCompatActivity {
             }
         });
 
+        viewModelForDetails.actors.observe(this, new Observer<ModelForActors>() {
+            @Override
+            public void onChanged(ModelForActors modelForActors) {
+                adapterForActors.setCastBeans(modelForActors.getCast());
+            }
+        });
+
 
         modelForRecommend.movieRecommendation.observe(this, new Observer<ModelForRecommendation>() {
             @Override
@@ -86,6 +105,9 @@ public class DetailsOfMovie extends AppCompatActivity {
                 adapterForRecommendations.setList(modelForRecommendation.getResults());
             }
         });
+
+
+
 
 
 

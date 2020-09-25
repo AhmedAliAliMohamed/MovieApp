@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.movieapp.Servers;
+import com.example.movieapp.models.ModelForActors;
 import com.example.movieapp.models.ModelForDetailMovie;
 import com.example.movieapp.models.ModelForRecommendation;
 
@@ -19,6 +20,7 @@ import retrofit2.Response;
 public class ViewModelForDetails extends ViewModel {
 
    public MutableLiveData<ModelForDetailMovie> data = new MutableLiveData<>();
+   public MutableLiveData<ModelForActors> actors = new MutableLiveData<>();
 
 
     public void getDetailMovie(int id) {
@@ -35,6 +37,19 @@ public class ViewModelForDetails extends ViewModel {
         });
     }
 
+    public void  getActors(int id){
+        Servers.getSERVICES().getActors(id).enqueue(new Callback<ModelForActors>() {
+            @Override
+            public void onResponse(Call<ModelForActors> call, Response<ModelForActors> response) {
+                actors.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<ModelForActors> call, Throwable t) {
+
+            }
+        });
+    }
 
 
 

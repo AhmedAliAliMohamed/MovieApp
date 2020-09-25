@@ -124,6 +124,7 @@
                     android:layout_height="@dimen/_150sdp"
                     android:layout_weight="1"
                     android:orientation="vertical"
+
                     />
                 <TextView
                     android:layout_width="match_parent"
