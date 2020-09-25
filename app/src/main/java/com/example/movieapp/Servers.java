@@ -1,6 +1,7 @@
 package com.example.movieapp;
 
 import com.example.movieapp.interfacescall.ApiCalling;
+import com.example.movieapp.models.ModelForActors;
 import com.example.movieapp.models.ModelForDetailMovie;
 import com.example.movieapp.models.ModelForHome;
 import com.example.movieapp.models.ModelForRecommendation;
@@ -39,5 +40,7 @@ public class Servers {
     public Call<ModelForDetailMovie> getDetailMovie(int movieId){return  apiCalling.getDetailMovie(movieId);}
 
     public Call<ModelForRecommendation> getMovieRecommendation(int movieIdRecommend){return apiCalling.getModelRecommendations(movieIdRecommend);}
+
+    public Call<ModelForActors> getActors(int movieId){return apiCalling.getActors(movieId);}
 
 }

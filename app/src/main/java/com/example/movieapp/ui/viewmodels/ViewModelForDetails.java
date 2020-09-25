@@ -36,4 +36,6 @@ public class ViewModelForDetails extends ViewModel {
     }
 
 
+
+
 }
