@@ -67,6 +67,7 @@ public class DetailsOfMovie extends AppCompatActivity {
         viewModelForDetails = ViewModelProviders.of(this).get(ViewModelForDetails.class);
         modelForRecommend = ViewModelProviders.of(this).get(ViewModelForRecommend.class);
         viewModelForDetails.getDetailMovie(id);
+        viewModelForDetails.getActors(id);
         modelForRecommend.getMovieRecommendation(id);
 
 

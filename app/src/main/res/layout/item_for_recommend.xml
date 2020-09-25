@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:weightSum="30"
-            android:background="@color/Darkgray">
+            >
             <ImageView
                 android:id="@+id/image_recommend"
                 android:layout_width="match_parent"

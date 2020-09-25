@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.DetailsOfMovie"
-    android:background="@color/Darkgray"
     >
     <ScrollView
         android:layout_width="match_parent"
@@ -124,7 +123,6 @@
                     android:layout_height="@dimen/_150sdp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -133,14 +131,14 @@
                     android:textSize="@dimen/_13sdp"
                     android:text="@string/recommendations"
                     android:paddingLeft="@dimen/_4sdp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:paddingTop="@dimen/_10sdp"/>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_recommend"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_200sdp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:background="@color/black"
                     />
 
             </LinearLayout>

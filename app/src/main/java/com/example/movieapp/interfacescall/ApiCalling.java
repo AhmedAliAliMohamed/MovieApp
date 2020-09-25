@@ -28,7 +28,7 @@ public interface ApiCalling {
     public  Call<ModelForRecommendation> getModelRecommendations(@Path("movie_id") int movieId);
 
     @GET("movie/{movie_id}/credits?api_key=7ca11e2b62de055509e9b58e13b6dcd5")
-    public Call<ModelForActors> getActors(@Path("movie_Id") int movieId);
+    public Call<ModelForActors> getActors(@Path("movie_id") int movieId);
 
 
 
